@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pacifico&display=swap");
 
 /* Variables */
 :root {
@@ -46,20 +46,15 @@ i {
 }
 .subheader {
   font-size: clamp(1.4rem, 3vw, 2.6rem);
-}
-.header-footer {
-  font-size: 2.2rem;
+  font-weight: 400;
 }
 .btn-main {
-  border: none;
   color: white;
-  background-color: black;
   font-size: clamp(1.2rem, 2vw, 1.4rem);
   padding: 1rem 2rem;
 }
 .btn-main:hover {
   cursor: pointer;
-  background-color: var(--green);
 }
 .promo-bar {
   color: white;
@@ -94,10 +89,17 @@ header {
 
 .hero {
 }
-.hero-image-mobile {
+.hero-img-mobile {
   width: 100%;
   height: 50vw;
+}
+.hero-img-1 {
   background: url("./images/Hero-Image-slide1.png") no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+.hero-img-2 {
+  background: url("./images/Hero-Image-2.png") no-repeat;
   background-size: cover;
   background-position: right;
 }
@@ -107,14 +109,20 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
+  gap: 0.5rem;
   padding-block: 2rem;
+}
+.hero-text-mobile .btn-main {
+  border: none;
+  background-color: black;
+  margin-top: 1.5rem;
 }
 .categories {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2vw;
+  padding-block: 2rem;
 }
 .category-womens {
   background: url("./images/Womens-Image.png") no-repeat;
@@ -151,7 +159,91 @@ header {
   color: white;
   background-color: var(--green);
 }
+.new-arrivals {
+  padding-bottom: 2rem;
+}
+.product-slider {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.product {
+  width: 40%;
+}
+.product-img {
+  width: 100%;
+}
+.product-title {
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+  font-weight: 400;
+}
+.product-subtitle {
+  font-size: clamp(1.2rem, 1vw, 1.6rem);
+  font-weight: 300;
+}
+.product-price {
+  font-family: var(--pacifico);
+  color: var(--green);
+  font-size: clamp(1.6rem, 2vw, 2.6rem);
+}
 
+.signup {
+  background-color: var(--green);
+  color: white;
+  padding: 2rem;
+}
+.signup p {
+  margin-top: 1rem;
+}
+.signup .btn-main {
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  margin-top: 6rem;
+}
+.signup .header-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.signup .header-2 i {
+  font-size: clamp(3rem, 6vw, 6rem);
+}
+footer {
+  padding: 2rem;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: white;
+}
+footer ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.follow-us ul {
+  flex-direction: row;
+}
+footer ul li {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+footer ul li i {
+  font-size: 3.5rem;
+}
+.header-footer {
+  font-size: 2.2rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
 @media (min-width: 500px) {
 }
 @media (min-width: 1000px) {
