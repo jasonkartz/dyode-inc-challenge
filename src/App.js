@@ -1,12 +1,32 @@
 import productImage from "./images/Product-Image.png";
+import { useState } from "react";
+import FooterLinkList from "./components/FooterLinkList";
 
 function App() {
+  const [displayMenu, setDisplayMenu] = useState(false);
   return (
     <>
       <div className="promo-bar">FREE SHIPPING ON ALL ORDERS</div>
       <header>
-        <button className="btn-menu-mobile"></button>
+        <button
+          onClick={() => setDisplayMenu(!displayMenu)}
+          className="btn-menu-mobile"
+        ></button>
         <h1 className="logo">logo</h1>
+        <nav className={displayMenu && "display-menu"}>
+          <ul>
+            <li>
+              <i
+                onClick={() => setDisplayMenu(!displayMenu)}
+                class="ri-close-line"
+              ></i>
+            </li>
+            <li>MEN'S</li>
+            <li>WOMEN'S</li>
+            <li>Accessories</li>
+            <li>SALE!</li>
+          </ul>
+        </nav>
         <span className="search-user-cart">
           <i className="ri-search-line"></i>
           <i className="ri-user-fill"></i>
@@ -76,30 +96,21 @@ function App() {
         <button className="btn-main">SUBSCRIBE</button>
       </section>
       <footer>
-        <div class="customer-service">
-          <h2 class="header-footer">
-            <span>Customer Service</span> <i class="ri-add-line"></i>
-          </h2>
-          <ul>
-            <li>Accessibility</li>
-            <li>Contact Us</li>
-            <li>Return Policy</li>
-            <li>FAQ</li>
-            <li>Gift Certificates</li>
-            <li>Wishlist</li>
-          </ul>
-        </div>
-        <div class="company">
-          <h2 class="header-footer">
-            <span>Company</span> <i class="ri-add-line"></i>
-          </h2>
-          <ul>
-            <li>About Us</li>
-            <li>Careers</li>
-            <li>Press</li>
-            <li>Affiliates</li>
-          </ul>
-        </div>
+        <FooterLinkList
+          title="Customer Service"
+          listArr={[
+            "Accessibility",
+            "Contact Us",
+            "Return Policy",
+            "FAQ",
+            "Gift Certificates",
+            "Wishlist",
+          ]}
+        />
+        <FooterLinkList
+          title="Company"
+          listArr={["About Us", "Careers", "Press", "Affiliates"]}
+        />
         <div class="follow-us">
           <h2 class="header-footer">Follow us</h2>
           <ul>

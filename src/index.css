@@ -28,6 +28,7 @@ body {
 i {
   font-size: 2.5rem;
 }
+
 .logo,
 .header-1,
 .header-2,
@@ -64,8 +65,10 @@ i {
 }
 header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 2rem;
+  flex-wrap: wrap;
   padding-inline: 2rem;
   padding-bottom: 0.75rem;
   background-color: var(--green);
@@ -80,7 +83,37 @@ header {
   width: 2.8rem;
   height: 2.8rem;
 }
-
+.btn-menu-mobile:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+.logo {
+  cursor: pointer;
+}
+nav {
+  display: none;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--green);
+  padding: 4rem;
+  z-index: 2;
+}
+nav ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+nav ul li:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+.display-menu {
+  display: initial;
+}
 .search-user-cart {
   margin-left: auto;
   display: flex;
@@ -219,22 +252,41 @@ footer {
   gap: 2rem;
   color: white;
 }
-footer ul {
+.footer-link-list {
+  display: none;
   list-style: none;
   padding-left: 0;
-  display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
 }
+.list-display {
+  display: flex;
+}
 .follow-us ul {
-  flex-direction: row;
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  gap: 2rem;
 }
 footer ul li {
   font-size: clamp(1.2rem, 3vw, 1.8rem);
 }
+footer ul li:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
 footer ul li i {
   font-size: 3.5rem;
+}
+footer button {
+  color: white;
+  border: none;
+  background-color: transparent;
+}
+footer button:hover {
+  cursor: pointer;
+  opacity: 0.75;
 }
 .header-footer {
   font-size: 2.2rem;
