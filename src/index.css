@@ -25,6 +25,11 @@ body {
   font-size: clamp(1.4rem, 2vw, 2.2rem);
   text-align: center;
 }
+.container {
+  max-width: 1440px;
+  margin-inline: auto;
+  background-color: white;
+}
 i {
   font-size: 2.5rem;
 }
@@ -37,7 +42,8 @@ i {
   font-family: var(--pacifico);
 }
 .logo {
-  font-size: 3rem;
+  font-size: clamp(3rem, 4vw, 5rem);
+  cursor: pointer;
 }
 .header-1 {
   font-size: clamp(2.6rem, 5vw, 6rem);
@@ -52,7 +58,7 @@ i {
 .btn-main {
   color: white;
   font-size: clamp(1.2rem, 2vw, 1.4rem);
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
 }
 .btn-main:hover {
   cursor: pointer;
@@ -68,7 +74,6 @@ header {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  flex-wrap: wrap;
   padding-inline: 2rem;
   padding-bottom: 0.75rem;
   background-color: var(--green);
@@ -87,9 +92,7 @@ header {
   cursor: pointer;
   opacity: 0.75;
 }
-.logo {
-  cursor: pointer;
-}
+
 nav {
   display: none;
   position: fixed;
@@ -106,6 +109,7 @@ nav ul {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  font-size: clamp(1.4rem, 2vw, 2rem);
 }
 nav ul li:hover {
   cursor: pointer;
@@ -120,7 +124,7 @@ nav ul li:hover {
   gap: 2rem;
 }
 
-.hero-img-mobile {
+.hero-img {
   width: 100%;
   height: 50vw;
 }
@@ -149,8 +153,8 @@ nav ul li:hover {
   background-size: cover;
   background-position: right;
 }
-.hero-text-mobile {
-  background-color: var(--stone);
+.hero-text-mobile,
+.hero-text-desktop {
   color: var(--green);
   display: flex;
   flex-direction: column;
@@ -158,7 +162,14 @@ nav ul li:hover {
   gap: 0.5rem;
   padding-block: 2rem;
 }
-.hero-text-mobile .btn-main {
+.hero-text-mobile {
+  background-color: var(--stone);
+}
+.hero-text-desktop {
+  display: none;
+}
+.hero-text-mobile .btn-main,
+.hero-text-desktop .btn-main {
   border: none;
   background-color: black;
   margin-top: 1.5rem;
@@ -182,7 +193,7 @@ nav ul li:hover {
   width: 44%;
   height: 55vw;
 }
-.accessories {
+.category-accessories {
   background: url("./images/Accessories-Image.png") no-repeat;
   background-size: cover;
   background-position: left 0% bottom 30%;
@@ -191,14 +202,14 @@ nav ul li:hover {
 }
 .category-womens,
 .category-mens,
-.accessories {
+.category-accessories {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 .category-womens:hover,
 .category-mens:hover,
-.accessories:hover {
+.category-accessories:hover {
   cursor: pointer;
 }
 .categories .header-2 {
@@ -219,6 +230,9 @@ nav ul li:hover {
 }
 .product {
   width: 80%;
+}
+.product:hover {
+  cursor: pointer;
 }
 .product-img {
   width: 100%;
@@ -245,11 +259,25 @@ nav ul li:hover {
 .signup p {
   margin-top: 1rem;
 }
+.signup form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.signup form input {
+  height: 6vw;
+  max-height: 6rem;
+  width: 100%;
+  max-width: 50rem;
+  padding: 2.25rem;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+}
 .signup .btn-main {
   border: 1px solid white;
   color: white;
   background-color: transparent;
-  margin-top: 6rem;
 }
 .signup .header-2 {
   display: flex;
@@ -315,7 +343,130 @@ footer button:hover {
 @media (min-width: 500px) {
 }
 @media (min-width: 1024px) {
+  header {
+    padding: 2rem 3rem;
+  }
+  nav {
+    display: initial;
+    position: static;
+    width: auto;
+    padding: 0;
+  }
+  nav ul {
+    flex-direction: row;
+    gap: 6rem;
+  }
+  .btn-menu-mobile {
+    display: none;
+  }
+  .menu-close {
+    display: none;
+  }
+  .search-user-cart {
+    margin: 0;
+  }
+  .hero-img {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding: 6rem;
+  }
+  .hero-slide-2 .hero-text-desktop,
+  .hero-slide-3 .hero-text-desktop,
+  .hero-img-2 .hero-text-desktop {
+    color: white;
+  }
+  .hero-text-mobile {
+    display: none;
+  }
+  .hero-text-desktop {
+    display: initial;
+  }
   .hero-dots {
     top: 46vw;
+  }
+  .categories {
+    padding-block: 3vw;
+    gap: 1vw;
+    flex-wrap: nowrap;
+  }
+  .category-womens,
+  .category-mens,
+  .category-accessories {
+    width: 31%;
+    height: 40vw;
+  }
+  .hero-img-2 {
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  .hero-img-2 .btn-main {
+    background-color: var(--green);
+  }
+  .signup {
+    padding: 8rem 6rem;
+    display: grid;
+    grid:
+      [row1-start] "signup-header signup-header" [row1-end]
+      [row2-start] "signup-p signup-form" [row2-end];
+    row-gap: 3rem;
+    column-gap: 4rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .signup .header-2 {
+    grid-area: signup-header;
+  }
+  .signup p {
+    display: inline;
+    grid-area: signup-p;
+    text-align: left;
+  }
+  .signup form {
+    display: inline-flex;
+    width: auto;
+    grid-area: signup-form;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .signup form input {
+    height: 0;
+    width: 30vw;
+  }
+  footer {
+    flex-direction: row;
+    gap: 8rem;
+    padding: 8rem;
+  }
+  .footer-link-list {
+    display: flex;
+  }
+  .header-footer button {
+    display: none;
+  }
+  .follow-us {
+    margin-left: auto;
+  }
+}
+@media (min-width: 1300px) {
+  .signup form input {
+    width: 40vw;
+    max-width: 45rem;
+  }
+}
+@media (min-width: 1500px) {
+  .hero-img {
+    height: 650px;
+  }
+  .hero-slide-1,
+  .hero-slide-2,
+  .hero-slide-3,
+  .hero-img-2 {
+    background-size: 1500px auto;
+  }
+  .category-womens,
+  .category-mens,
+  .category-accessories {
+    height: 600px;
   }
 }

@@ -12,7 +12,7 @@ export default function Header() {
       <h1 className="logo">logo</h1>
       <nav className={displayMenu && "display-menu"}>
         <ul>
-          <li>
+          <li className="menu-close">
             <i
               onClick={() => setDisplayMenu(!displayMenu)}
               class="ri-close-line"

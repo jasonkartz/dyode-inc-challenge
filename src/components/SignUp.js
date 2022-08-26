@@ -8,7 +8,10 @@ export default function SignUp() {
         Sign up for the newsletter and get 20% off! Gain access to exclusive
         offers and be the first to know when new stuff drops!
       </p>
-      <button className="btn-main">SUBSCRIBE</button>
+      <form>
+        <input type="email" placeholder="Enter Your Email Address" />
+        <button className="btn-main">SUBSCRIBE</button>
+      </form>
     </section>
   );
 }

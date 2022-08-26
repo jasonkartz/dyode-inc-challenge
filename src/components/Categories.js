@@ -7,7 +7,7 @@ export default function Categories() {
       <div className="category-mens">
         <h3 className="header-2">Men's</h3>
       </div>
-      <div className="accessories">
+      <div className="category-accessories">
         <h3 className="header-2">Accessories</h3>
       </div>
     </section>
